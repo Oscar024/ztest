@@ -31,9 +31,10 @@ def twoSampZ(X1, X2, sd1, sd2, n1, n2,alpha,type):
         print("Error tyoe")
     return pasalaPrueba,round(z, 3), round(pval, 4), round(zValue,3)
 
-
-alpha=0.05;
-x1=0.000155
+siginicantLevel=95;
+alpha=(100-siginicantLevel)/100;
+#alpha=0.05;
+x1=0.0000155
 x2=0.0084
 std1=0.000041
 std2=0.0395
@@ -43,7 +44,7 @@ type="ColaIzquierda"
 #type="ColaDerecha"
 #type="DosColas"
 
-resultado,z,p, zval= twoSampZ(28, 33, 14.1, 9.5, 75, 50,0.05,type)
+resultado,z,p, zval= twoSampZ(x1, x2, std1, std2, n1, n2,alpha,type)
 
 if resultado == 1:
     print("Hay suficiente evidencia para apoyar la afirmacion")
