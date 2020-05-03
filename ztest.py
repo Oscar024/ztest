@@ -33,27 +33,28 @@ def twoSampZ(X1, X2, sd1, sd2, n1, n2,alpha,type):
         print("Error tyoe")
     return pasalaPrueba,round(z, 3), round(pval, 4), round(zValue,3)
 
-siginicantLevel=95;
-alpha=(100-siginicantLevel)/100;
-#alpha=0.05;
-x1=0.0000155
-x2=0.0084
-std1=0.000041
-std2=0.0395
-n1=30
-n2=30
-type="ColaIzquierda"
-#type="ColaDerecha"
-#type="DosColas"
+if __name__ == '__main__':
+    siginicantLevel=95;
+    alpha=(100-siginicantLevel)/100;
+    #alpha=0.05;
+    x1=0.0000155
+    x2=0.0084
+    std1=0.000041
+    std2=0.0395
+    n1=30
+    n2=30
+    type="ColaIzquierda"
+    #type="ColaDerecha"
+    #type="DosColas"
 
-resultado,z,p, zval= twoSampZ(x1, x2, std1, std2, n1, n2,alpha,type)
+    resultado,z,p, zval= twoSampZ(x1, x2, std1, std2, n1, n2,alpha,type)
 
-if resultado == 1:
-    print("Hay suficiente evidencia para apoyar la afirmacion")
-else:
-    print("No hay suficiente evidencia para apoyar la afirmacion")
+    if resultado == 1:
+        print("Hay suficiente evidencia para apoyar la afirmacion")
+    else:
+        print("No hay suficiente evidencia para apoyar la afirmacion")
 
-print("z calculada : ")
-print(z)
-print("z critica :")
-print(zval)
+    print("z calculada : ")
+    print(z)
+    print("z critica :")
+    print(zval)
