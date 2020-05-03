@@ -16,12 +16,14 @@ def twoSampZ(X1, X2, sd1, sd2, n1, n2,alpha,type):
             pasalaPrueba=1;
         else:
             pasalaPrueba=0;
+    # Ha: u1 > u2
     elif type == "ColaDerecha":
         zValue = st.norm.ppf(1 - alpha)
         if z > zValue:
             pasalaPrueba=1;
         else:
             pasalaPrueba=0;
+    # Ha: u1 = u2
     elif type == "DosColas":
         if z >= st.norm.ppf(alpha) and z<= st.norm.ppf(1 - alpha):
             pasalaPrueba=1;
